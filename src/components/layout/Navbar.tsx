@@ -1,25 +1,35 @@
-import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Heart, ShoppingBag, User, Menu, X, LogOut, Package, Settings } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useCart } from '@/context/CartContext';
-import { useAuth } from '@/context/AuthContext';
-import { cn } from '@/lib/utils';
+import { useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import {
+  Search,
+  Heart,
+  ShoppingBag,
+  User,
+  Menu,
+  X,
+  LogOut,
+  Package,
+  Settings,
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { useCart } from "@/context/CartContext";
+import { useAuth } from "@/context/AuthContext";
+import { cn } from "@/lib/utils";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Men', href: '/category/men' },
-  { name: 'Women', href: '/category/women' },
-  { name: 'Accessories', href: '/category/accessories' },
-  { name: 'New Drops', href: '/new' },
-  { name: 'Sale', href: '/sale' },
+  { name: "Home", href: "/" },
+  { name: "Men", href: "/category/men" },
+  { name: "Women", href: "/category/women" },
+  { name: "Accessories", href: "/category/accessories" },
+  { name: "New Drops", href: "/new" },
+  { name: "Sale", href: "/sale" },
 ];
 
 export function Navbar() {
@@ -32,7 +42,7 @@ export function Navbar() {
 
   const handleSignOut = async () => {
     await signOut();
-    navigate('/');
+    navigate("/");
   };
 
   return (
@@ -42,7 +52,7 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 z-10">
             <span className="text-xl md:text-2xl font-display font-bold gradient-text">
-              NEXUS
+              CLOTHIFY
             </span>
           </Link>
 
@@ -78,7 +88,11 @@ export function Navbar() {
             </Button>
 
             {/* Wishlist */}
-            <Button variant="ghost" size="icon" className="hidden md:flex group">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden md:flex group"
+            >
               <Heart className="h-5 w-5 transition-colors group-hover:text-secondary" />
             </Button>
 
@@ -101,7 +115,11 @@ export function Navbar() {
             {user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <Button variant="ghost" size="icon" className="hidden md:flex group relative">
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="hidden md:flex group relative"
+                  >
                     {profile?.avatar_url ? (
                       <img
                         src={profile.avatar_url}
@@ -114,30 +132,40 @@ export function Navbar() {
                     <span className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-green-500 ring-2 ring-background" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-56 glass border-border">
+                <DropdownMenuContent
+                  align="end"
+                  className="w-56 glass border-border"
+                >
                   <div className="px-3 py-2">
-                    <p className="text-sm font-medium">{profile?.full_name || 'User'}</p>
-                    <p className="text-xs text-muted-foreground">{user.email}</p>
+                    <p className="text-sm font-medium">
+                      {profile?.full_name || "User"}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {user.email}
+                    </p>
                   </div>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={() => navigate('/profile')}>
+                  <DropdownMenuItem onClick={() => navigate("/profile")}>
                     <User className="mr-2 h-4 w-4" />
                     Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/orders')}>
+                  <DropdownMenuItem onClick={() => navigate("/orders")}>
                     <Package className="mr-2 h-4 w-4" />
                     My Orders
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/cart')}>
+                  <DropdownMenuItem onClick={() => navigate("/cart")}>
                     <ShoppingBag className="mr-2 h-4 w-4" />
                     Cart
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => navigate('/settings')}>
+                  <DropdownMenuItem onClick={() => navigate("/settings")}>
                     <Settings className="mr-2 h-4 w-4" />
                     Settings
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem onClick={handleSignOut} className="text-destructive focus:text-destructive">
+                  <DropdownMenuItem
+                    onClick={handleSignOut}
+                    className="text-destructive focus:text-destructive"
+                  >
                     <LogOut className="mr-2 h-4 w-4" />
                     Sign Out
                   </DropdownMenuItem>
@@ -148,7 +176,7 @@ export function Navbar() {
                 variant="ghost"
                 size="icon"
                 className="hidden md:flex group"
-                onClick={() => navigate('/auth')}
+                onClick={() => navigate("/auth")}
               >
                 <User className="h-5 w-5 transition-colors group-hover:text-primary" />
               </Button>
@@ -161,7 +189,11 @@ export function Navbar() {
               className="lg:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </nav>
@@ -188,7 +220,9 @@ export function Navbar() {
       <div
         className={cn(
           "lg:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-xl transition-all duration-300 z-40",
-          isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          isMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         )}
       >
         <div className="container mx-auto px-4 py-8">
@@ -201,7 +235,9 @@ export function Navbar() {
                 className={cn(
                   "text-2xl font-display font-medium py-3 border-b border-border transition-all duration-300 opacity-0",
                   isMenuOpen && "animate-fade-in",
-                  location.pathname === link.href ? "text-primary" : "text-foreground"
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground"
                 )}
                 style={{ animationDelay: `${index * 50}ms` }}
               >

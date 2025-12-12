@@ -12,6 +12,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CartPanel } from "@/components/cart/CartPanel";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
+import AboutPage from "./pages/AboutPage";
 import CategoryPage from "./pages/CategoryPage";
 import ProductPage from "./pages/ProductPage";
 import NewDropsPage from "./pages/NewDropsPage";
@@ -49,40 +50,99 @@ const App = () => (
               <ScrollToTop />
               <Routes>
                 {/* Admin Routes (no navbar/footer) */}
-                <Route path="/admin" element={<ProtectedRoute requiredRoles={['superadmin']}><AdminDashboard /></ProtectedRoute>} />
-                <Route path="/admin/shops" element={<ProtectedRoute requiredRoles={['superadmin']}><AdminShops /></ProtectedRoute>} />
-                <Route path="/admin/users" element={<ProtectedRoute requiredRoles={['superadmin']}><AdminUsers /></ProtectedRoute>} />
+                <Route
+                  path="/admin"
+                  element={
+                    <ProtectedRoute requiredRoles={["superadmin"]}>
+                      <AdminDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin/shops"
+                  element={
+                    <ProtectedRoute requiredRoles={["superadmin"]}>
+                      <AdminShops />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/admin/users"
+                  element={
+                    <ProtectedRoute requiredRoles={["superadmin"]}>
+                      <AdminUsers />
+                    </ProtectedRoute>
+                  }
+                />
 
                 {/* Shop Owner Routes (no navbar/footer) */}
-                <Route path="/dashboard" element={<ProtectedRoute requiredRoles={['shop_owner']}><ShopDashboard /></ProtectedRoute>} />
-                <Route path="/dashboard/products" element={<ProtectedRoute requiredRoles={['shop_owner']}><ShopProducts /></ProtectedRoute>} />
-                <Route path="/dashboard/orders" element={<ProtectedRoute requiredRoles={['shop_owner']}><ShopOrders /></ProtectedRoute>} />
-                <Route path="/dashboard/settings" element={<ProtectedRoute requiredRoles={['shop_owner']}><ShopSettings /></ProtectedRoute>} />
+                <Route
+                  path="/dashboard"
+                  element={
+                    <ProtectedRoute requiredRoles={["shop_owner"]}>
+                      <ShopDashboard />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/dashboard/products"
+                  element={
+                    <ProtectedRoute requiredRoles={["shop_owner"]}>
+                      <ShopProducts />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/dashboard/orders"
+                  element={
+                    <ProtectedRoute requiredRoles={["shop_owner"]}>
+                      <ShopOrders />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/dashboard/settings"
+                  element={
+                    <ProtectedRoute requiredRoles={["shop_owner"]}>
+                      <ShopSettings />
+                    </ProtectedRoute>
+                  }
+                />
 
                 {/* Public Routes with Navbar/Footer */}
-                <Route path="*" element={
-                  <div className="min-h-screen flex flex-col">
-                    <Navbar />
-                    <CartPanel />
-                    <div className="flex-1">
-                      <Routes>
-                        <Route path="/" element={<Index />} />
-                        <Route path="/category/:category" element={<CategoryPage />} />
-                        <Route path="/product/:id" element={<ProductPage />} />
-                        <Route path="/shop/:slug" element={<ShopPage />} />
-                        <Route path="/new" element={<NewDropsPage />} />
-                        <Route path="/sale" element={<SalePage />} />
-                        <Route path="/auth" element={<AuthPage />} />
-                        <Route path="/cart" element={<CartPage />} />
-                        <Route path="/checkout" element={<CheckoutPage />} />
-                        <Route path="/orders" element={<OrdersPage />} />
-                        <Route path="/settings" element={<SettingsPage />} />
-                        <Route path="*" element={<NotFound />} />
-                      </Routes>
+                <Route
+                  path="*"
+                  element={
+                    <div className="min-h-screen flex flex-col">
+                      <Navbar />
+                      <CartPanel />
+                      <div className="flex-1">
+                        <Routes>
+                          <Route path="/" element={<Index />} />
+                          <Route path="/about" element={<AboutPage />} />
+                          <Route
+                            path="/category/:category"
+                            element={<CategoryPage />}
+                          />
+                          <Route
+                            path="/product/:id"
+                            element={<ProductPage />}
+                          />
+                          <Route path="/shop/:slug" element={<ShopPage />} />
+                          <Route path="/new" element={<NewDropsPage />} />
+                          <Route path="/sale" element={<SalePage />} />
+                          <Route path="/auth" element={<AuthPage />} />
+                          <Route path="/cart" element={<CartPage />} />
+                          <Route path="/checkout" element={<CheckoutPage />} />
+                          <Route path="/orders" element={<OrdersPage />} />
+                          <Route path="/settings" element={<SettingsPage />} />
+                          <Route path="*" element={<NotFound />} />
+                        </Routes>
+                      </div>
+                      <Footer />
                     </div>
-                    <Footer />
-                  </div>
-                } />
+                  }
+                />
               </Routes>
             </BrowserRouter>
           </CartProvider>

@@ -84,14 +84,18 @@ export default function CheckoutPage() {
       // Create order items
       const orderItems = items.map(item => ({
         order_id: order.id,
-        product_id: item.product.id,
+        product_id: String(item.product.id), // Ensure it's a string
         product_name: item.product.name,
-        product_image: item.product.images[0],
-        price: item.product.price,
+        product_image: item.product.images?.[0] || null,
+        price: parseFloat(String(item.product.price)),
         quantity: item.quantity,
-        size: item.size,
-        color: item.color,
+        size: item.size || null,
+        color: item.color || null,
       }));
+
+      if (orderItems.length === 0) {
+        throw new Error('No items in cart');
+      }
 
       const { error: itemsError } = await supabase
         .from('order_items')

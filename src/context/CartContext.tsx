@@ -1,8 +1,16 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { Product } from '@/data/products';
 
+export interface CartProduct {
+  id: string;
+  name: string;
+  price: number;
+  images: string[];
+  [key: string]: any;
+}
+
 export interface CartItem {
-  product: Product;
+  product: CartProduct;
   quantity: number;
   size: string;
   color: string;
@@ -11,7 +19,7 @@ export interface CartItem {
 interface CartContextType {
   items: CartItem[];
   isOpen: boolean;
-  addToCart: (product: Product, size: string, color: string, quantity?: number) => void;
+  addToCart: (product: CartProduct, size: string, color: string, quantity?: number) => void;
   removeFromCart: (productId: string, size: string, color: string) => void;
   updateQuantity: (productId: string, size: string, color: string, quantity: number) => void;
   clearCart: () => void;

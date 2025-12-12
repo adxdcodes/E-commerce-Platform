@@ -1,31 +1,31 @@
-import { Link } from 'react-router-dom';
-import { Instagram, Twitter, Youtube, Mail } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Link } from "react-router-dom";
+import { Instagram, Twitter, Youtube, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const footerLinks = {
   company: [
-    { name: 'About Us', href: '/about' },
-    { name: 'Careers', href: '/careers' },
-    { name: 'Press', href: '/press' },
-    { name: 'Sustainability', href: '/sustainability' },
+    { name: "About Us", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Press", href: "/press" },
+    { name: "Sustainability", href: "/sustainability" },
   ],
   support: [
-    { name: 'Help Center', href: '/help' },
-    { name: 'Shipping', href: '/shipping' },
-    { name: 'Returns', href: '/returns' },
-    { name: 'Size Guide', href: '/size-guide' },
+    { name: "Help Center", href: "/help" },
+    { name: "Shipping", href: "/shipping" },
+    { name: "Returns", href: "/returns" },
+    { name: "Size Guide", href: "/size-guide" },
   ],
   legal: [
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Service', href: '/terms' },
-    { name: 'Cookie Policy', href: '/cookies' },
+    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms of Service", href: "/terms" },
+    { name: "Cookie Policy", href: "/cookies" },
   ],
 };
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Youtube, href: "#", label: "YouTube" },
 ];
 
 export function Footer() {
@@ -37,14 +37,14 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link to="/" className="inline-block mb-4">
               <span className="text-2xl font-display font-bold gradient-text">
-                NEXUS
+                CLOTHIFY
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              Redefining fashion for the future. Premium quality, sustainable materials, 
-              and cutting-edge design.
+              Redefining fashion for the future. At Clothify, we deliver premium
+              quality, sustainable materials, and cutting-edge design.
             </p>
-            
+
             {/* Newsletter */}
             <div className="flex gap-2">
               <div className="relative flex-1">
@@ -118,7 +118,7 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} NEXUS. All rights reserved.
           </p>
-          
+
           {/* Social Links */}
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
