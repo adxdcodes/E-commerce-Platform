@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* ========== CYBER DARK (Default) ========== */
+  :root,
+  .theme-cyber-dark {
+    --background: 240 20% 4%;
+    --foreground: 0 0% 100%;
+    --card: 240 18% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 240 18% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 207 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 267 100% 67%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 14% 16%;
+    --muted-foreground: 0 0% 75%;
+    --accent: 267 100% 67%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 14% 20%;
+    --input: 240 14% 20%;
+    --ring: 207 100% 55%;
+    --radius: 0.75rem;
+    --glow-blue: 207 100% 55%;
+    --glow-purple: 267 100% 67%;
+    --glass-bg: 240 18% 10%;
+    --glass-border: 240 14% 25%;
+    --sidebar-background: 240 18% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 207 100% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 267 100% 67%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 14% 20%;
+    --sidebar-ring: 207 100% 55%;
+  }
+
+  /* ========== CYBER LIGHT ========== */
+  .theme-cyber-light {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 258 90% 66%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 258 90% 66%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    --glow-blue: 199 89% 48%;
+    --glow-purple: 258 90% 66%;
+    --glass-bg: 210 40% 96%;
+    --glass-border: 214 32% 85%;
+    --sidebar-background: 210 40% 96%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 258 90% 66%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 199 89% 48%;
+  }
+
+  /* ========== OCEAN DEPTHS ========== */
+  .theme-ocean-depths {
+    --background: 222 47% 8%;
+    --foreground: 185 100% 95%;
+    --card: 222 40% 12%;
+    --card-foreground: 185 100% 95%;
+    --popover: 222 40% 12%;
+    --popover-foreground: 185 100% 95%;
+    --primary: 187 92% 43%;
+    --primary-foreground: 222 47% 8%;
+    --secondary: 187 94% 50%;
+    --secondary-foreground: 222 47% 8%;
+    --muted: 222 30% 18%;
+    --muted-foreground: 185 30% 70%;
+    --accent: 187 94% 50%;
+    --accent-foreground: 222 47% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 22%;
+    --input: 222 30% 22%;
+    --ring: 187 92% 43%;
+    --glow-blue: 187 92% 43%;
+    --glow-purple: 187 94% 50%;
+    --glass-bg: 222 40% 14%;
+    --glass-border: 222 30% 26%;
+    --sidebar-background: 222 47% 6%;
+    --sidebar-foreground: 185 100% 95%;
+    --sidebar-primary: 187 92% 43%;
+    --sidebar-primary-foreground: 222 47% 8%;
+    --sidebar-accent: 187 94% 50%;
+    --sidebar-accent-foreground: 222 47% 8%;
+    --sidebar-border: 222 30% 22%;
+    --sidebar-ring: 187 92% 43%;
+  }
+
+  /* ========== SUNSET BLAZE ========== */
+  .theme-sunset-blaze {
+    --background: 0 30% 5%;
+    --foreground: 30 100% 97%;
+    --card: 0 25% 10%;
+    --card-foreground: 30 100% 97%;
+    --popover: 0 25% 10%;
+    --popover-foreground: 30 100% 97%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 84% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 20% 16%;
+    --muted-foreground: 30 30% 70%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 20% 20%;
+    --input: 0 20% 20%;
+    --ring: 24 95% 53%;
+    --glow-blue: 24 95% 53%;
+    --glow-purple: 0 84% 60%;
+    --glass-bg: 0 25% 12%;
+    --glass-border: 0 20% 24%;
+    --sidebar-background: 0 30% 4%;
+    --sidebar-foreground: 30 100% 97%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 84% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 20% 20%;
+    --sidebar-ring: 24 95% 53%;
+  }
+
+  /* ========== FOREST MIST ========== */
+  .theme-forest-mist {
+    --background: 120 20% 4%;
+    --foreground: 120 30% 97%;
+    --card: 120 18% 8%;
+    --card-foreground: 120 30% 97%;
+    --popover: 120 18% 8%;
+    --popover-foreground: 120 30% 97%;
+    --primary: 142 71% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 84 81% 44%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 120 14% 16%;
+    --muted-foreground: 120 20% 70%;
+    --accent: 84 81% 44%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 120 14% 20%;
+    --input: 120 14% 20%;
+    --ring: 142 71% 45%;
+    --glow-blue: 142 71% 45%;
+    --glow-purple: 84 81% 44%;
+    --glass-bg: 120 18% 10%;
+    --glass-border: 120 14% 25%;
+    --sidebar-background: 120 20% 3%;
+    --sidebar-foreground: 120 30% 97%;
+    --sidebar-primary: 142 71% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 84 81% 44%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 120 14% 20%;
+    --sidebar-ring: 142 71% 45%;
+  }
+
+  /* ========== ROYAL PURPLE ========== */
+  .theme-royal-purple {
+    --background: 270 30% 5%;
+    --foreground: 280 100% 97%;
+    --card: 270 25% 10%;
+    --card-foreground: 280 100% 97%;
+    --popover: 270 25% 10%;
+    --popover-foreground: 280 100% 97%;
+    --primary: 271 91% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 330 81% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 270 20% 16%;
+    --muted-foreground: 280 30% 70%;
+    --accent: 330 81% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 270 20% 20%;
+    --input: 270 20% 20%;
+    --ring: 271 91% 65%;
+    --glow-blue: 271 91% 65%;
+    --glow-purple: 330 81% 60%;
+    --glass-bg: 270 25% 12%;
+    --glass-border: 270 20% 25%;
+    --sidebar-background: 270 30% 4%;
+    --sidebar-foreground: 280 100% 97%;
+    --sidebar-primary: 271 91% 65%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 330 81% 60%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 270 20% 20%;
+    --sidebar-ring: 271 91% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  /* Glassmorphism effect */
+  .glass {
+    @apply bg-glass/60 backdrop-blur-xl border border-glass-border/30;
+  }
+
+  .glass-subtle {
+    @apply bg-glass/40 backdrop-blur-md border border-glass-border/20;
+  }
+
+  /* Neon glow effects */
+  .glow-blue {
+    box-shadow: 0 0 20px hsl(var(--glow-blue) / 0.4),
+                0 0 40px hsl(var(--glow-blue) / 0.2),
+                0 0 60px hsl(var(--glow-blue) / 0.1);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 20px hsl(var(--glow-purple) / 0.4),
+                0 0 40px hsl(var(--glow-purple) / 0.2),
+                0 0 60px hsl(var(--glow-purple) / 0.1);
+  }
+
+  .glow-subtle {
+    box-shadow: 0 0 15px hsl(var(--glow-blue) / 0.2),
+                0 0 30px hsl(var(--glow-blue) / 0.1);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .hover-lift:hover {
+    @apply -translate-y-1;
+    box-shadow: 0 10px 30px hsl(var(--glow-blue) / 0.15);
+  }
+
+  /* Product card image flip */
+  .product-image-container {
+    @apply relative overflow-hidden;
+  }
+
+  .product-image-container .primary-image {
+    @apply transition-opacity duration-500 ease-in-out;
+  }
+
+  .product-image-container .secondary-image {
+    @apply absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out;
+  }
+
+  .product-image-container:hover .primary-image {
+    @apply opacity-0;
+  }
+
+  .product-image-container:hover .secondary-image {
+    @apply opacity-100;
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  /* Pulse animation for buttons */
+  .btn-pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--glow-blue) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px hsl(var(--glow-blue) / 0.6),
+                  0 0 50px hsl(var(--glow-blue) / 0.3);
+    }
+  }
+
+  /* Animated background glow */
+  .animated-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-glow::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, hsl(var(--glow-blue) / 0.15) 0%, transparent 50%);
+    animation: rotate-glow 10s linear infinite;
+  }
+
+  @keyframes rotate-glow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Smooth scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--background));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.6);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
